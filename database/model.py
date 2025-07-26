@@ -1,20 +1,5 @@
 import psycopg2
-
-
-def get_connection():
-    try:
-        conn = psycopg2.connect(
-            dbname="postgres",
-            user="postgres",
-            password="Roxo#800",
-            host="192.168.82.22",
-            port=5432
-        )
-        print("Conexão bem-sucedida!")
-        return conn
-    except psycopg2.Error as e:
-        print(f"Error ao conectar ao banco de dados: {e}")
-        return None
+from .get_connection import get_connection
 
 def create_user_table():
     conn = get_connection()
@@ -39,7 +24,3 @@ def create_user_table():
     finally:
         if conn:
             conn.close()
-
-
-create_user_table()
-

@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from database.model import create_user_table
 
 # Cria uma instância do Flask
 app = Flask(__name__)
@@ -8,11 +9,16 @@ data = ['teste', 'ola']
 
 
 # Vizualizar
-@app.route('/view', methods=['GET'])
-def view():
+@app.route('/', methods=['GET'])
+def home():
     return jsonify(data), 200
+
+# Adicionar Valores
+@app.route('/register', methods=['GET'])
+def register():
+    return jsonify('teste de cadastro'), 200
 
 # Indentifica se o arquivo atual esta sendo executado diretamente
 if __name__ == "__main__":
-    # Inicia o servidor indicando o IP e PORTA
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000) # Inicia o servidor indicando o IP e PORTA
+    create_user_table() # Verifica e cria a base de dados.
