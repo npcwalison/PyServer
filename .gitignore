@@ -1,4 +1,5 @@
 Lib/
+venv/
 Scripts/
 pyvenv.cfg
 __pycache__/

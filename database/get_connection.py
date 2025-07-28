@@ -9,7 +9,7 @@ def get_connection():
             dbname="postgres",
             user="postgres",
             password="Roxo#800",
-            host="172.28.122.156",
+            host="192.168.82.22",
             port=5432
         )
         print("Conexão bem-sucedida!")
