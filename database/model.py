@@ -13,7 +13,8 @@ def create_user_table():
                 -- CRIA SETOR COMO MESTRE DE TUDO
                 CREATE TABLE IF NOT EXISTS gti_sectors (
                     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-                    sc_name VARCHAR(100)
+                    sc_name VARCHAR(100),
+                    sc_description VARCHAR(500)
                 );
                 -- CRIA MAQUINAS PRESENTES NO SETOR
                 CREATE TABLE IF NOT EXISTS gti_machines (
