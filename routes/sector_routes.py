@@ -14,8 +14,15 @@ def registerSector():
     if not data:
         return jsonify({'error': 'Nenhum dado enviado'}), 400
     
-    return jsonify({'mensagem': 'Setor registrado com sucesso!', 'dados_recebidos:': data}), 201
-    # return jsonify('registrar sector'), 200
+    try:
+        controller_sector(data)
+        return jsonify({
+            'mensagem': 'Setor registrado com sucesso!',
+            'dados_recebidos:': data
+        }), 201
+    except ValueError as e:
+        return jsonify({'erro': str(e)}), 400
+# Final sector router.
 
 @sector_bp.route('/register/users', methods=['POST'])
 def registerUsers():
@@ -23,9 +30,15 @@ def registerUsers():
     if not data:
         return jsonify({'error': 'Nenhum dado enviado'}), 400
     
-    return jsonify({'mensagem': 'Setor registrado com sucesso!', 'dados_recebidos:': data}), 201
-
-    # return jsonify('registrar usuarios'), 200
+    try:
+        controller_sector(data)
+        return jsonify({
+            'mensagem': 'Setor registrado com sucesso!',
+            'dados_recebidos:': data
+        }), 201
+    except ValueError as e:
+        return jsonify({'erro': str(e)}), 400
+# Final users router.
 
 @sector_bp.route('/register/machines', methods=['POST'])
 def registerMachines():
@@ -33,9 +46,15 @@ def registerMachines():
     if not data:
         return jsonify({'error': 'Nenhum dado enviado'}), 400
     
-    return jsonify({'mensagem': 'Setor registrado com sucesso!', 'dados_recebidos:': data}), 201
-
-    # return jsonify('registrar maquinas'), 200
+    try:
+        controller_sector(data)
+        return jsonify({
+            'mensagem': 'Setor registrado com sucesso!',
+            'dados_recebidos:': data
+        }), 201
+    except ValueError as e:
+        return jsonify({'erro': str(e)}), 400
+# Final machines router.
 
 @sector_bp.route('/register/events', methods=['POST'])
 def registerEvents():
@@ -43,6 +62,12 @@ def registerEvents():
     if not data:
         return jsonify({'error': 'Nenhum dado enviado'}), 400
     
-    return jsonify({'mensagem': 'Setor registrado com sucesso!', 'dados_recebidos:': data}), 201
-
-    # return jsonify('registrar eventos'), 200
+    try:
+        controller_sector(data)
+        return jsonify({
+            'mensagem': 'Setor registrado com sucesso!',
+            'dados_recebidos:': data
+        }), 201
+    except ValueError as e:
+        return jsonify({'erro': str(e)}), 400
+# Final events router.

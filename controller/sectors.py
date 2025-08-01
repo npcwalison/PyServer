@@ -1,11 +1,66 @@
-def controller_sector():
-    return null
+from flask import jsonify
 
-def controller_users():
-    return null
+def controller_sector(data):
+    # Agora a função pode receber os dados do formulário
+    nome = data.get('nome')
+    descricao = data.get('descricao')
 
-def controller_machines():
-    return null
+    print(nome)
+    print(descricao)
 
-def controller_events():
-    return null
+    if not nome:
+        raise ValueError("O campo 'nome' é obrigatório")
+
+    return {
+        'nome': nome.strip().title(),
+        'descricao': descricao.strip() if descricao else None
+    }
+
+def controller_users(data):
+    # Agora a função pode receber os dados do formulário
+    nome = data.get('nome')
+    descricao = data.get('descricao')
+
+    print(nome)
+    print(descricao)
+
+    if not nome:
+        raise ValueError("O campo 'nome' é obrigatório")
+
+    return {
+        'nome': nome.strip().title(),
+        'descricao': descricao.strip() if descricao else None
+    }
+
+
+def controller_machines(data):
+    # Agora a função pode receber os dados do formulário
+    nome = data.get('nome')
+    descricao = data.get('descricao')
+
+    print(nome)
+    print(descricao)
+
+    if not nome:
+        raise ValueError("O campo 'nome' é obrigatório")
+
+    return {
+        'nome': nome.strip().title(),
+        'descricao': descricao.strip() if descricao else None
+    }
+
+def controller_events(data):
+    # Agora a função pode receber os dados do formulário
+    nome = data.get('nome')
+    descricao = data.get('descricao')
+
+    print(nome)
+    print(descricao)
+
+    if not nome:
+        raise ValueError("O campo 'nome' é obrigatório")
+
+    return {
+        'nome': nome.strip().title(),
+        'descricao': descricao.strip() if descricao else None
+    }
