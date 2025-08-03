@@ -1,0 +1,10 @@
+Lib/
+venv/
+Scripts/
+pyvenv.cfg
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env/
+*.env
