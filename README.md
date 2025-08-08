@@ -30,6 +30,16 @@ Para rodar o nosso codigo, executar no terminal: <br />
 uvicorn main:app --reload
 ~~~
 
+Criar uma nova versão de tabela com alembic: <br />
+~~~
+alembic revision --autogenerate -m "Initial Migration"
+~~~
+
+Faz com que a nova versão da tabela criada seja gerada no alembic: <br />
+~~~
+uvicorn main:app --reload
+~~~
+
 
 #### MODELO DE ESTRUTURA DO PROJETO
 
@@ -85,7 +95,7 @@ uvicorn main:app --reload
 └── 📄 .env  <br/>
 
 
-### MODELO DE BANDO DE DADOS
+### MODELO DE BANDO DE DADOS DE OUTRO PROJETO PARA SE BASEAR
 
 ~~~sql
                 -- CRIA SETOR COMO MESTRE DE TUDO
