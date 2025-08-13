@@ -10,7 +10,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 app = FastAPI()
 
 # deprecated, descarta criptografia obsoleta.
-bcrypet_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 from apps.users.urls import auth_router
 from config.urls import order_router
