@@ -1,7 +1,7 @@
 from pydantic import BaseModel # força a tipagem de dados
 from typing import Optional
 
-class UserSchemas(BaseModel):
+class UserSchema(BaseModel):
     name: str
     email: str
     passwd: str
@@ -10,3 +10,16 @@ class UserSchemas(BaseModel):
 
     class Config:
         from_attributes=True
+
+class RequestSchema(BaseModel):
+    user: int
+
+    class Config:
+        from_attributes = True
+
+class SignInSchema(BaseModel):
+    email: str
+    passwd: str
+
+    class Config:
+        from_attributes = True
